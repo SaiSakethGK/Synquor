@@ -22,6 +22,8 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const bigDeltaUnicode: string = "\u0394";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +43,7 @@ export default function RootLayout({
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"https://synquor.vercel.app/"}>SYNQUOR</Link>
+                    <Link href={"https://synquor.vercel.app/"}>ORBI{bigDeltaUnicode}CCEL</Link>
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                 </div>
