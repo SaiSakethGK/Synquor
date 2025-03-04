@@ -6,6 +6,8 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
+import { Inter } from "next/font/google";
+
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -22,7 +24,8 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const bigDeltaUnicode: string = "\u0394";
+const inter = Inter({ subsets: ["latin"], display: "swap" });
+const brandName = `ORBI\u0394CCEL`;
 
 export default function RootLayout({
   children,
@@ -42,8 +45,8 @@ export default function RootLayout({
             <div className="flex-1 w-full flex flex-col gap-20 items-center">
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"https://synquor.vercel.app/"}>orbi{bigDeltaUnicode}ccel</Link>
+                  <div className={inter.className} style={{ fontSize: "2rem", fontWeight: "bold" }}>
+                    <Link href={"https://synquor.vercel.app/"}>brandName</Link>
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                 </div>
