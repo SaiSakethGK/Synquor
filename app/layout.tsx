@@ -46,7 +46,7 @@ export default function RootLayout({
               <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className={inter.className} style={{ fontSize: "2rem", fontWeight: "bold" }}>
-                    <Link href={"https://synquor.vercel.app/"}>brandName</Link>
+                    <Link href={"https://synquor.vercel.app/"}>{brandName}</Link>
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                 </div>
