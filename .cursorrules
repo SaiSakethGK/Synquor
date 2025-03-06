@@ -1,0 +1,161 @@
+Here's the tailored `.cursorrules` file for **ORBIACCEL**, keeping it structured for effective project management and tracking reusable insights.  
+
+```plaintext
+# Instructions
+
+During your interaction with the user, if you find anything reusable in this project (e.g., Next.js version, API integrations, structured data setup, multilingual SEO practices), especially about a fix to a mistake you made or a correction you received, you should document it in the `Lessons` section of this `.cursorrules` file to avoid repeating mistakes.
+
+You should also use the `.cursorrules` file as a **scratchpad** to organize your thoughts. When starting a new task, first review the content of the scratchpad, remove unrelated past tasks if necessary, outline the key objectives, and break them into clear steps.
+
+Use **progress markers** to track the completion status:
+[X] Task Completed  
+[ ] Task Pending  
+
+Regularly **update the task progress**, especially after reaching milestones. Keeping a **big-picture perspective** alongside tracking progress will improve project efficiency. Always refer to the **Scratchpad** before planning the next steps.
+
+---
+
+# Tools
+
+## Web & Screenshot Verification
+
+ORBIACCEL’s platform is web-based, so for UI validation, SEO verification, and error debugging, leverage the following tools:
+
+1. **Screenshot Capture**  
+```bash
+venv/bin/python tools/screenshot_utils.py URL [--output OUTPUT] [--width WIDTH] [--height HEIGHT]
+```
+
+2. **LLM-Based Verification**  
+```bash
+venv/bin/python tools/llm_api.py --prompt "Verify SEO metadata and structured data" --provider {openai|anthropic} --image path/to/screenshot.png
+```
+
+Example workflow:
+```python
+from screenshot_utils import take_screenshot_sync
+from llm_api import query_llm
+
+# Take a screenshot
+screenshot_path = take_screenshot_sync('https://orbiaccel.com', 'screenshot.png')
+
+# Verify with LLM
+response = query_llm(
+    "Check if the meta tags are correct for multilingual SEO",
+    provider="openai",
+    image_path=screenshot_path
+)
+print(response)
+```
+
+---
+
+## LLM API Usage for ORBIACCEL
+
+For content generation, translation, and structured data optimization, use the LLM API:
+```bash
+venv/bin/python ./tools/llm_api.py --prompt "Generate an SEO-optimized meta description for a grant research platform" --provider "anthropic"
+```
+
+Supported AI Providers for ORBIACCEL:
+- OpenAI (GPT-4o)
+- Azure OpenAI (Configured in `.env`)
+- DeepSeek (DeepSeek Chat API)
+- Anthropic (Claude-3)
+- Gemini (Gemini Pro)
+- Local AI Model (Qwen2.5-32B for offline processing)
+
+For **batch processing** of metadata, structured data, and translations, consider writing a **Python script** leveraging the above API.
+
+---
+
+## Web Scraping & Data Extraction
+
+ORBIACCEL requires data scraping from grant directories and funding portals. Use:
+```bash
+venv/bin/python ./tools/web_scraper.py --max-concurrent 3 URL1 URL2 URL3
+```
+This fetches web pages and extracts structured data for processing.
+
+---
+
+## Search Engine Queries for Funding Data
+
+To find the latest funding opportunities:
+```bash
+venv/bin/python ./tools/search_engine.py "latest AI grants UK 2024"
+```
+The output will be in:
+```
+URL: https://example.com
+Title: AI Grant for Nonprofits 2024
+Snippet: This grant offers funding for AI-based research in...
+```
+Further process the URLs using **web_scraper.py** if needed.
+
+---
+
+# Lessons
+
+## ORBIACCEL-Specific Lessons  
+
+- **ORBIACCEL uses Next.js 15**, Tailwind CSS, and **Supabase for authentication and database management**.  
+- **DeepSeek API/OpenAI is used for AI-powered grant matching and NLP-based recommendations**.  
+- **Ensure all landing pages include hreflang tags and are SEO-optimized for multilingual content**.  
+- **Use Incremental Static Regeneration (ISR) in Next.js to handle frequent updates efficiently**.  
+- **Dynamic URL paths should follow the pattern**:  
+  - `/en/grant-research`  
+  - `/es/investigacion-de-subvenciones`  
+- **Prioritize structured data (Schema.org) for funding-related pages to enhance search visibility**.  
+- **Use generateStaticParams to pre-build all possible landing pages for efficiency**.  
+
+---
+
+## Cursor Learned (For ORBIACCEL Development)
+
+- **SEO Best Practices:** Ensure all pages have **precise meta titles, structured data, and hreflang attributes**.  
+- **Grant Data Processing:** Extract and categorize grant data using **automated ETL workflows**.  
+- **Database Efficiency:** Optimize **PostgreSQL queries** when fetching grant-related insights for faster response times.  
+- **User Experience:** Prioritize **simple UI/UX elements**, ensuring clear CTA buttons for **grant applications**.  
+- **AI Model Output:** When using **DeepSeek API**, validate the **accuracy of funding recommendations** before display.  
+
+---
+
+# Scratchpad (Active Task List)
+
+### **[X] Setup & Configuration**
+- [X] Next.js 15 with Tailwind CSS installed.
+- [X] Supabase authentication configured.
+- [X] Initial folder structure created (`/public/images/`, `/components/`, `/pages/`).
+
+### **[ ] Implement Grant Research Module**
+- [ ] Integrate **DeepSeek API** for NLP-based grant matching.
+- [ ] Develop **Next.js frontend** for displaying grant search results.
+- [ ] Implement **grant tracking & deadline alert system**.
+
+### **[ ] SEO & Localization**
+- [ ] Add **hreflang tags** for multilingual pages.
+- [ ] Ensure structured URLs for **British English & European Spanish**.
+- [ ] Generate **SEO metadata dynamically** using AI.
+
+### **[ ] Dynamic Landing Pages**
+- [ ] Generate pages for each **location + service** combination.
+- [ ] Optimize **Incremental Static Regeneration (ISR)**.
+
+### **[ ] About Developer Page**
+- [ ] Create a dedicated page for **Sai Saketh Gooty Kase** showcasing expertise.
+- [ ] Include **technical skills, projects, and vision for ORBIACCEL**.
+
+---
+
+# ORBIACCEL Vision  
+🚀 *Transforming static workflows into dynamic orbits with AI.* 🚀  
+```
+
+### **Why This Version?**  
+- **Refined for ORBIACCEL** – Includes AI integration, grant research focus, and multi-solution roadmap.  
+- **Modular Task Breakdown** – Clearly structured **Scratchpad** for tracking development progress.  
+- **Includes SEO & Data Considerations** – Ensures **best practices** for structured data, multilingual SEO, and grant categorization.  
+- **Optimized AI Workflows** – Lists **DeepSeek API integration, NLP validation, and automation strategies**.  
+
+This `.cursorrules` file will help **streamline development**, maintain focus, and ensure **future-proof AI-driven solutions** under ORBIACCEL. 🚀

@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,52 +10,58 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 0% 0%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 0 0% 0%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --orbit-purple: #6d28d9;
+    --orbit-green: #10b981;
+    --orbit-black: #111111;
+    --orbit-white: #ffffff;
+    --orbit-glow: 0 0 15px rgba(109, 40, 217, 0.5);
+    --orbit-bg-gradient: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(109, 40, 217, 0.2) 100%);
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 0% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -65,5 +76,305 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  .orbit-font {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  
+  .orbit-heading {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+  }
+  
+  .orbit-subheading {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+  }
+  
+  .orbit-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .ai-glow {
+    position: relative;
+    background: linear-gradient(90deg, #00ff66 0%, #b366ff 50%, #00ff66 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 255, 102, 0.8), 0 0 40px rgba(179, 102, 255, 0.6);
+    animation: ai-pulse-glow 2s infinite alternate, ai-text-shift 4s linear infinite;
+  }
+  
+  @keyframes ai-pulse-glow {
+    0% {
+      text-shadow: 0 0 15px rgba(0, 255, 102, 0.8), 0 0 30px rgba(179, 102, 255, 0.6);
+    }
+    50% {
+      text-shadow: 0 0 25px rgba(179, 102, 255, 0.9), 0 0 50px rgba(0, 255, 102, 0.7);
+    }
+    100% {
+      text-shadow: 0 0 35px rgba(0, 255, 102, 1), 0 0 70px rgba(179, 102, 255, 0.8);
+    }
+  }
+  
+  @keyframes ai-text-shift {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  .brand-glow {
+    position: relative;
+    background: linear-gradient(90deg, #9933ff 0%, #00ffcc 33%, #ffffff 66%, #9933ff 100%);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(153, 51, 255, 0.8), 0 0 40px rgba(0, 255, 204, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+    animation: brand-pulse-glow 6s infinite alternate, brand-text-shift 11s linear infinite;
+  }
+  
+  @keyframes brand-pulse-glow {
+    0% {
+      text-shadow: 0 0 15px rgba(153, 51, 255, 0.8), 0 0 30px rgba(0, 255, 204, 0.6), 0 0 45px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 25px rgba(0, 255, 204, 0.9), 0 0 50px rgba(255, 255, 255, 0.7), 0 0 75px rgba(153, 51, 255, 0.5);
+    }
+    100% {
+      text-shadow: 0 0 35px rgba(255, 255, 255, 1), 0 0 70px rgba(153, 51, 255, 0.8), 0 0 105px rgba(0, 255, 204, 0.6);
+    }
+  }
+  
+  @keyframes brand-text-shift {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 300% center;
+    }
+  }
+  
+  .orbit-card {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm transition-all duration-300;
+  }
+  
+  .orbit-card:hover {
+    @apply shadow-lg border-primary/30;
+    transform: translateY(-2px);
+  }
+  
+  .orbit-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  
+  .orbit-button:hover {
+    @apply shadow-md shadow-primary/20;
+  }
+  
+  .orbit-input {
+    @apply border-input bg-background text-foreground rounded-md focus:ring-2 focus:ring-primary/30;
+  }
+  
+  .orbit-input:focus {
+    @apply outline-none border-primary;
+  }
+  
+  .orbit-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
+  }
+  
+  .orbit-badge-secondary {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  .orbit-container {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.03), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .orbit-container:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .orbit-card-selected {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .orbit-circle {
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  }
+  
+  .orbit-item {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: orbit 20s linear infinite;
+  }
+  
+  .orbit-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1.2);
+  }
+  
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+  }
+  
+  .orbit-animation {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .orbit-mini-element {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    animation: orbit-mini 10s linear infinite;
+  }
+  
+  @keyframes orbit-mini {
+    0% {
+      transform: rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+  }
+  
+  /* Story theme for About Developer page */
+  .story-container {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .story-chapter {
+    @apply mb-16 relative;
+  }
+  
+  .story-chapter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+  }
+  
+  .story-chapter::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+  }
+  
+  .story-chapter:last-child::after {
+    display: none;
+  }
+  
+  .story-title {
+    @apply text-2xl mb-6 pl-6 orbit-heading;
+    font-family: 'Source Code Pro', monospace;
+    letter-spacing: 0.05em;
+  }
+  
+  .story-content {
+    @apply pl-6;
+  }
+  
+  .story-quote {
+    @apply my-6 pl-4 border-l-2 border-white/30 italic text-lg;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+  }
+  
+  .story-highlight {
+    @apply text-white;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 200;
+  }
+  
+  .story-skill {
+    @apply inline-block px-3 py-1 bg-white/10 rounded-full text-sm mr-2 mb-2 transition-all duration-300;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 100;
+  }
+  
+  .story-skill:hover {
+    @apply bg-white/20 transform -translate-y-1;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .delay-3 {
+    animation-delay: 0.6s;
+  }
+  
+  .delay-4 {
+    animation-delay: 0.8s;
   }
 }
