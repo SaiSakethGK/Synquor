@@ -3,7 +3,7 @@ import "./globals.css";
 import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
-  title: "0rbiΔccel - AI-Powered Solutions",
+  title: "0rbiΔccel",
   description: "AI solutions that automate workflows, enhance decision-making, and optimize resource management",
 };
 

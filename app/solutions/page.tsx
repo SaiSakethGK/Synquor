@@ -21,11 +21,11 @@ export default function GrantResearch() {
       <section className="mb-16 max-w-4xl mx-auto">
         <div className="text-center fade-in mb-16">
           <h1 className="text-5xl mb-6 orbit-heading">
-            AI-Powered Solutions
-          </h1>
+          AI-Powered Solutions
+        </h1>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
-            I believe in the transformative power of AI to solve complex challenges. Inspired by the orbital mechanics that guide celestial bodies through space, OrbiAccel provides solutions that create perfect trajectories for your ideas to reach their full potential. Creating intelligent systems that adapt to your unique needs.
-          </p>
+          I believe in the transformative power of AI to solve complex challenges. Inspired by the orbital mechanics that guide celestial bodies through space, OrbiAccel provides solutions that create perfect trajectories for your ideas to reach their full potential. Creating intelligent systems that adapt to your unique needs.
+        </p>
         </div>
 
         {/* Solutions Overview */}
@@ -202,8 +202,8 @@ export default function GrantResearch() {
               </li>
             </ul>
             <div className="mt-auto text-center">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-500/20 text-green-400">
-                Available
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
+                In Progress
               </span>
             </div>
           </div>
@@ -306,26 +306,26 @@ export default function GrantResearch() {
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400">
                 Coming Soon
               </span>
-            </div>
           </div>
+        </div>
 
           {/* Empty Project - Planning */}
           <div className="bg-card text-card-foreground rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 orbit-card fade-in delay-3 h-full flex flex-col">
             <div className="mb-6 flex justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 className="h-12 w-12 text-primary"
-              >
+                >
                 <path d="M2 12h20M16 6l6 6-6 6"></path>
-              </svg>
+                </svg>
             </div>
             <h3 className="text-xl mb-3 orbit-subheading text-center">Future Project</h3>
             <p className="mb-4 text-muted-foreground text-center">

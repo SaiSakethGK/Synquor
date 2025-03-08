@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -40,6 +41,9 @@
     --orbit-white: #ffffff;
     --orbit-glow: 0 0 15px rgba(109, 40, 217, 0.5);
     --orbit-bg-gradient: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(109, 40, 217, 0.2) 100%);
+    --smart-glow: 0 0 10px rgba(16, 185, 129, 0.7);
+    --fast-glow: 0 0 10px rgba(239, 68, 68, 0.7);
+    --efficient-glow: 0 0 10px rgba(59, 130, 246, 0.7);
   }
 
   .dark {
@@ -109,23 +113,193 @@
   
   .ai-glow {
     position: relative;
-    background: linear-gradient(90deg, #00ff66 0%, #b366ff 50%, #00ff66 100%);
+    background: linear-gradient(90deg, #00ff99 0%, #cc66ff 50%, #00ff99 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 255, 102, 0.8), 0 0 40px rgba(179, 102, 255, 0.6);
+    text-shadow: 0 0 25px rgba(0, 255, 153, 0.9), 0 0 50px rgba(204, 102, 255, 0.8);
     animation: ai-pulse-glow 2s infinite alternate, ai-text-shift 4s linear infinite;
+    font-family: 'Mandali', sans-serif;
+    font-weight: 600;
+    padding: 0 3px;
+    letter-spacing: 0.05em;
+    font-size: 1.1em;
+  }
+  
+  /* Sparkling Stars */
+  .gold-star-1, .gold-star-2, .white-star {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .gold-star-1::before, .gold-star-2::before, .white-star::before {
+    content: "";
+    position: absolute;
+    background-image: radial-gradient(
+      circle,
+      currentColor 0%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    border-radius: 50%;
+    display: block;
+    filter: blur(0.5px);
+    transform-origin: center;
+  }
+  
+  .gold-star-1::after, .gold-star-2::after, .white-star::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    display: block;
+    transform-origin: center;
+    box-shadow: 0 0 10px currentColor;
+  }
+  
+  .gold-star-1::before {
+    width: 14px;
+    height: 14px;
+    color: rgba(255, 215, 0, 0.9);
+    filter: blur(1px) drop-shadow(0 0 8px gold);
+    animation: star-pulse 2s ease-in-out infinite, star-color-gold 4s linear infinite;
+  }
+  
+  .gold-star-1::after {
+    width: 12px;
+    height: 12px;
+    color: gold;
+    filter: drop-shadow(0 0 8px gold);
+    animation: star-rotate 8s linear infinite, star-twinkle 3s ease-in-out infinite;
+  }
+  
+  .gold-star-2::before {
+    width: 12px;
+    height: 12px;
+    color: rgba(255, 215, 0, 0.9);
+    filter: blur(1px) drop-shadow(0 0 8px gold);
+    animation: star-pulse 2.5s ease-in-out infinite 0.5s, star-color-gold 5s linear infinite reverse;
+  }
+  
+  .gold-star-2::after {
+    width: 10px;
+    height: 10px;
+    color: gold;
+    filter: drop-shadow(0 0 8px gold);
+    animation: star-rotate 10s linear infinite reverse, star-twinkle 4s ease-in-out infinite 0.7s;
+  }
+  
+  .white-star::before {
+    width: 10px;
+    height: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    filter: blur(1px) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    animation: star-pulse 3s ease-in-out infinite 1s, star-color-white 6s linear infinite;
+  }
+  
+  .white-star::after {
+    width: 8px;
+    height: 8px;
+    color: white;
+    filter: drop-shadow(0 0 8px white);
+    animation: star-rotate 12s linear infinite, star-twinkle 5s ease-in-out infinite 1.5s;
+  }
+  
+  .gold-star-1 {
+    animation: gold-star-1-animation 8s ease-in-out infinite;
+    opacity: 1;
+  }
+  
+  .gold-star-2 {
+    animation: gold-star-2-animation 10s ease-in-out infinite;
+    opacity: 1;
+  }
+  
+  .white-star {
+    animation: white-star-animation 12s ease-in-out infinite;
+    opacity: 1;
+  }
+  
+  @keyframes gold-star-1-animation {
+    0%, 100% { opacity: 0.9; }
+    10% { opacity: 0.9; }
+    30%, 70% { opacity: 1; }
+    20% { transform: translate(20%, 20%); }
+    40% { transform: translate(60%, 30%); }
+    60% { transform: translate(40%, 70%); }
+    80% { transform: translate(10%, 50%); opacity: 0.9; }
+    90% { opacity: 0.9; }
+  }
+  
+  @keyframes gold-star-2-animation {
+    0%, 100% { opacity: 0.9; }
+    10% { opacity: 0.9; }
+    30%, 70% { opacity: 1; }
+    20% { transform: translate(70%, 10%); }
+    40% { transform: translate(30%, 40%); }
+    60% { transform: translate(80%, 60%); }
+    80% { transform: translate(50%, 20%); opacity: 0.9; }
+    90% { opacity: 0.9; }
+  }
+  
+  @keyframes white-star-animation {
+    0%, 100% { opacity: 0.9; }
+    15% { opacity: 0.9; }
+    35%, 75% { opacity: 1; }
+    25% { transform: translate(40%, 40%); }
+    45% { transform: translate(10%, 70%); }
+    65% { transform: translate(70%, 80%); }
+    85% { transform: translate(60%, 10%); opacity: 0.9; }
+    95% { opacity: 0.9; }
+  }
+  
+  @keyframes star-pulse {
+    0%, 100% { transform: scale(0.8); opacity: 0.8; }
+    50% { transform: scale(1.8); opacity: 1; }
+  }
+  
+  @keyframes star-rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(100deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(0.9); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes star-twinkle {
+    0%, 100% { opacity: 0.7; filter: drop-shadow(0 0 5px currentColor); }
+    50% { opacity: 1; filter: drop-shadow(0 0 15px currentColor); }
+  }
+  
+  @keyframes star-color-gold {
+    0%, 100% { color: gold; }
+    33% { color: #ffd700; }
+    66% { color: #ffcc00; }
+  }
+  
+  @keyframes star-color-white {
+    0%, 100% { color: white; }
+    33% { color: #f0f8ff; }
+    66% { color: #e6e6fa; }
   }
   
   @keyframes ai-pulse-glow {
     0% {
-      text-shadow: 0 0 15px rgba(0, 255, 102, 0.8), 0 0 30px rgba(179, 102, 255, 0.6);
+      text-shadow: 0 0 20px rgba(0, 255, 153, 0.9), 0 0 40px rgba(204, 102, 255, 0.7);
     }
     50% {
-      text-shadow: 0 0 25px rgba(179, 102, 255, 0.9), 0 0 50px rgba(0, 255, 102, 0.7);
+      text-shadow: 0 0 35px rgba(204, 102, 255, 1), 0 0 70px rgba(0, 255, 153, 0.8);
     }
     100% {
-      text-shadow: 0 0 35px rgba(0, 255, 102, 1), 0 0 70px rgba(179, 102, 255, 0.8);
+      text-shadow: 0 0 50px rgba(0, 255, 153, 1), 0 0 90px rgba(204, 102, 255, 0.9);
     }
   }
   
@@ -377,4 +551,32 @@
   .delay-4 {
     animation-delay: 0.8s;
   }
+}
+
+/* Word effect classes - Lighter and brighter glows */
+.word-smarter {
+  position: relative;
+  display: inline-block;
+  color: #34d399; /* Lighter green */
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.8);
+  font-weight: 500;
+  padding: 0 2px;
+}
+
+.word-faster {
+  position: relative;
+  display: inline-block;
+  color: #f87171; /* Lighter red */
+  text-shadow: 0 0 12px rgba(248, 113, 113, 0.8);
+  font-weight: 500;
+  padding: 0 2px;
+}
+
+.word-efficient {
+  position: relative;
+  display: inline-block;
+  color: #60a5fa; /* Lighter blue */
+  text-shadow: 0 0 12px rgba(96, 165, 250, 0.8);
+  font-weight: 500;
+  padding: 0 2px;
 }

@@ -70,9 +70,9 @@ export function MobileNav() {
               Home
             </Link>
             <Link
-              href="/grant-research"
+              href="/solutions"
               className={
-                pathname === "/grant-research"
+                pathname === "/solutions"
                   ? "text-white"
                   : "text-white/60 hover:text-white transition-colors"
               }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { MainNav } from "@/components/main-nav";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
@@ -37,7 +37,7 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </a>
             </Button>
-            <ModeToggle />
+            <ThemeSwitcher />
             <Button asChild className="orbit-button rounded-full hidden sm:flex">
               <Link href="/grant-research">
                 Try Grant Research

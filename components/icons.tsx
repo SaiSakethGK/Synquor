@@ -1,3 +1,4 @@
+import React from "react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -23,10 +24,10 @@ import {
   Twitter,
   User,
   X,
-  type Icon as LucideIcon,
 } from "lucide-react";
 
-export type Icon = LucideIcon;
+// Define the Icon type using the LucideProps interface
+export type Icon = React.ComponentType<LucideProps>;
 
 export const Icons = {
   logo: ({ ...props }: LucideProps) => (
