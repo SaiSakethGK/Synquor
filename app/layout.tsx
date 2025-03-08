@@ -1,10 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
   title: "0rbiΔccel",
   description: "AI solutions that automate workflows, enhance decision-making, and optimize resource management",
+  themeColor: "#000000",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#000000",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

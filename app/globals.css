@@ -126,6 +126,83 @@
     font-size: 1.1em;
   }
   
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .ai-glow {
+      font-size: 1em;
+      padding: 0 2px;
+      text-shadow: 0 0 15px rgba(0, 255, 153, 0.9), 0 0 30px rgba(204, 102, 255, 0.8);
+    }
+    
+    .gold-star-1::before, .gold-star-2::before, .white-star::before {
+      transform-origin: center;
+      /* Slightly smaller stars on mobile */
+      transform: scale(0.85);
+    }
+    
+    .gold-star-1::after, .gold-star-2::after, .white-star::after {
+      transform-origin: center;
+      /* Slightly smaller stars on mobile */
+      transform: scale(0.85);
+    }
+    
+    /* Adjust animation paths for smaller screens */
+    @keyframes gold-star-1-animation {
+      0%, 100% { opacity: 0.9; }
+      10% { opacity: 0.9; }
+      30%, 70% { opacity: 1; }
+      20% { transform: translate(15%, 15%) scale(0.85); }
+      40% { transform: translate(45%, 25%) scale(0.85); }
+      60% { transform: translate(30%, 55%) scale(0.85); }
+      80% { transform: translate(8%, 40%) scale(0.85); opacity: 0.9; }
+      90% { opacity: 0.9; transform: scale(0.85); }
+    }
+    
+    @keyframes gold-star-2-animation {
+      0%, 100% { opacity: 0.9; }
+      10% { opacity: 0.9; }
+      30%, 70% { opacity: 1; }
+      20% { transform: translate(55%, 8%) scale(0.85); }
+      40% { transform: translate(25%, 30%) scale(0.85); }
+      60% { transform: translate(65%, 45%) scale(0.85); }
+      80% { transform: translate(40%, 15%) scale(0.85); opacity: 0.9; }
+      90% { opacity: 0.9; transform: scale(0.85); }
+    }
+    
+    @keyframes white-star-animation {
+      0%, 100% { opacity: 0.9; }
+      15% { opacity: 0.9; }
+      35%, 75% { opacity: 1; }
+      25% { transform: translate(30%, 30%) scale(0.85); }
+      45% { transform: translate(8%, 55%) scale(0.85); }
+      65% { transform: translate(55%, 65%) scale(0.85); }
+      85% { transform: translate(45%, 8%) scale(0.85); opacity: 0.9; }
+      95% { opacity: 0.9; transform: scale(0.85); }
+    }
+  }
+  
+  /* Responsive text adjustments */
+  @media (max-width: 480px) {
+    .orbit-heading {
+      letter-spacing: 0.03em;
+    }
+    
+    .orbit-subheading {
+      letter-spacing: 0.03em;
+    }
+    
+    .ai-glow {
+      font-size: 0.95em;
+      padding: 0 1px;
+    }
+    
+    /* Even smaller stars on very small screens */
+    .gold-star-1::before, .gold-star-2::before, .white-star::before,
+    .gold-star-1::after, .gold-star-2::after, .white-star::after {
+      transform: scale(0.75);
+    }
+  }
+  
   /* Sparkling Stars */
   .gold-star-1, .gold-star-2, .white-star {
     pointer-events: none;
@@ -579,4 +656,50 @@
   text-shadow: 0 0 12px rgba(96, 165, 250, 0.8);
   font-weight: 500;
   padding: 0 2px;
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+  /* Increase touch targets for better mobile usability */
+  button, 
+  a, 
+  .orbit-button,
+  input[type="submit"] {
+    touch-action: manipulation;
+  }
+  
+  /* Add active state styles for touch feedback */
+  .orbit-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Improve form elements for touch */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Ensure sufficient spacing between interactive elements */
+  .orbit-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Optimize scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Prevent content from being hidden under fixed headers on iOS */
+@supports (-webkit-touch-callout: none) {
+  .fixed {
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Fix for iOS 100vh issue */
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }

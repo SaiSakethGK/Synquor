@@ -48,14 +48,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 sm:p-6">
       <div 
         className="bg-card text-card-foreground rounded-lg shadow-lg w-full max-w-md relative orbit-card"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-muted-foreground hover:text-foreground p-2 touch-manipulation"
           aria-label="Close modal"
         >
           <svg
@@ -68,18 +68,18 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
           >
             <path d="M18 6 6 18"></path>
             <path d="m6 6 12 12"></path>
           </svg>
         </button>
         
-        <div className="p-6">
-          <h2 className="text-2xl font-bold mb-6 orbit-heading">Get in Touch</h2>
+        <div className="p-4 sm:p-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 orbit-heading">Get in Touch</h2>
           
           {isSubmitted ? (
-            <div className="text-center py-8">
+            <div className="text-center py-6 sm:py-8">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -90,20 +90,20 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-12 w-12 text-green-500 mx-auto mb-4"
+                className="h-10 w-10 sm:h-12 sm:w-12 text-green-500 mx-auto mb-3 sm:mb-4"
               >
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
-              <h3 className="text-xl font-bold mb-2 orbit-subheading">Message Sent!</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 orbit-subheading">Message Sent!</h3>
               <p className="text-muted-foreground">
                 Thank you for reaching out. I'll get back to you soon.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+              <div className="space-y-1 sm:space-y-2">
+                <Label htmlFor="name" className="text-sm sm:text-base">Name</Label>
                 <Input
                   id="name"
                   name="name"
@@ -111,12 +111,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   onChange={handleChange}
                   placeholder="Your name"
                   required
-                  className="orbit-input"
+                  className="orbit-input h-10 sm:h-11"
                 />
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+              <div className="space-y-1 sm:space-y-2">
+                <Label htmlFor="email" className="text-sm sm:text-base">Email</Label>
                 <Input
                   id="email"
                   name="email"
@@ -125,12 +125,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   onChange={handleChange}
                   placeholder="your.email@example.com"
                   required
-                  className="orbit-input"
+                  className="orbit-input h-10 sm:h-11"
                 />
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+              <div className="space-y-1 sm:space-y-2">
+                <Label htmlFor="message" className="text-sm sm:text-base">Message</Label>
                 <Textarea
                   id="message"
                   name="message"
@@ -138,13 +138,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   onChange={handleChange}
                   placeholder="How can I help you?"
                   required
-                  className="min-h-[120px] orbit-input"
+                  className="min-h-[100px] sm:min-h-[120px] orbit-input"
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full orbit-button"
+                className="w-full orbit-button h-11 sm:h-12 mt-2 sm:mt-4 text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

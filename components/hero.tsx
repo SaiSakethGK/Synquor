@@ -84,15 +84,15 @@ export default function Hero() {
   return (
     <div className="bg-black min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-6xl">
           <div 
             ref={heroSectionRef}
-            className="text-center mb-16 fade-in"
+            className="text-center mb-12 sm:mb-16 fade-in"
           >
-            <div className="py-6 md:py-8">
-              <h1 className="text-4xl md:text-5xl tracking-tight mb-8 orbit-heading">
-                Let's make workflows<span className="inline-block w-4"></span>
+            <div className="py-4 sm:py-6 md:py-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl tracking-tight mb-6 sm:mb-8 orbit-heading">
+                Let's make workflows<span className="inline-block w-2 sm:w-4"></span>
                 <span className="word-smarter">smarter</span>, <span className="word-faster">faster</span>, and more <span className="word-efficient">efficient</span> with <span className="ai-glow relative inline-block">
                   <span className="gold-star-1 absolute"></span>
                   <span className="gold-star-2 absolute"></span>
@@ -100,16 +100,16 @@ export default function Hero() {
                   Ai
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-8">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mt-6 sm:mt-8">
                 OrbiAccel transforms repetitive workflows into smooth, automated cycles - <em>just like a perfectly balanced orbit</em>. It analyzes complex data, finds patterns, and delivers smart recommendations to accelerate decision-making. By reducing manual work, OrbiAccel helps teams focus on bigger goals, work faster, and achieve more with less effort.
               </p>
-              <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <Button asChild className="orbit-button rounded-full px-8 py-6 text-lg">
+              <div className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-3 sm:gap-4">
+                <Button asChild className="orbit-button rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg">
                   <Link href="/solutions">
                     Explore Solutions
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg">
+                <Button asChild variant="outline" className="rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg">
                   <Link href="/about-developer">
                     About Developer
                   </Link>
@@ -121,26 +121,26 @@ export default function Hero() {
       </section>
 
       {/* Main Solution Section */}
-      <section className="py-12 md:py-16 bg-black/50">
+      <section className="py-10 sm:py-12 md:py-16 bg-black/50">
         <div className="container mx-auto px-4">
           <div 
             ref={mainSolutionRef}
-            className="max-w-5xl mx-auto mb-12 fade-in delay-1"
+            className="max-w-5xl mx-auto mb-10 sm:mb-12 fade-in delay-1"
           >
             <div 
-              className="orbit-card p-8 md:p-10 rounded-xl shadow-lg"
+              className="orbit-card p-6 sm:p-8 md:p-10 rounded-xl shadow-lg"
               onMouseEnter={() => setActiveContainer(mainSolution.id)}
             >
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                <div className="bg-primary/10 p-5 rounded-full">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 sm:gap-8">
+                <div className="bg-primary/10 p-4 sm:p-5 rounded-full">
                   {mainSolution.icon}
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-2xl md:text-3xl orbit-subheading">{mainSolution.title}</h3>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl orbit-subheading">{mainSolution.title}</h3>
                   </div>
-                  <p className="text-muted-foreground mb-6 text-lg">{mainSolution.description}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <p className="text-base sm:text-lg text-muted-foreground mb-6">{mainSolution.description}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div className="flex flex-col items-center md:items-start p-4 bg-white/5 rounded-lg">
                       <div className="flex items-center gap-2 mb-2">
                         <svg
