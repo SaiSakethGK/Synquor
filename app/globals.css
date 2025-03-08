@@ -162,14 +162,14 @@
     );
     display: block;
     transform-origin: center;
-    box-shadow: 0 0 10px currentColor;
+    box-shadow: 0 0 4px currentColor;
   }
   
   .gold-star-1::before {
     width: 14px;
     height: 14px;
-    color: rgba(255, 215, 0, 0.9);
-    filter: blur(1px) drop-shadow(0 0 8px gold);
+    color: rgba(255, 215, 0, 0.8);
+    filter: blur(1px) drop-shadow(0 0 3px gold);
     animation: star-pulse 2s ease-in-out infinite, star-color-gold 4s linear infinite;
   }
   
@@ -177,15 +177,15 @@
     width: 12px;
     height: 12px;
     color: gold;
-    filter: drop-shadow(0 0 8px gold);
+    filter: drop-shadow(0 0 3px gold);
     animation: star-rotate 8s linear infinite, star-twinkle 3s ease-in-out infinite;
   }
   
   .gold-star-2::before {
     width: 12px;
     height: 12px;
-    color: rgba(255, 215, 0, 0.9);
-    filter: blur(1px) drop-shadow(0 0 8px gold);
+    color: rgba(255, 215, 0, 0.8);
+    filter: blur(1px) drop-shadow(0 0 3px gold);
     animation: star-pulse 2.5s ease-in-out infinite 0.5s, star-color-gold 5s linear infinite reverse;
   }
   
@@ -193,15 +193,15 @@
     width: 10px;
     height: 10px;
     color: gold;
-    filter: drop-shadow(0 0 8px gold);
+    filter: drop-shadow(0 0 3px gold);
     animation: star-rotate 10s linear infinite reverse, star-twinkle 4s ease-in-out infinite 0.7s;
   }
   
   .white-star::before {
     width: 10px;
     height: 10px;
-    color: rgba(255, 255, 255, 0.9);
-    filter: blur(1px) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    color: rgba(255, 255, 255, 0.8);
+    filter: blur(1px) drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
     animation: star-pulse 3s ease-in-out infinite 1s, star-color-white 6s linear infinite;
   }
   
@@ -209,7 +209,7 @@
     width: 8px;
     height: 8px;
     color: white;
-    filter: drop-shadow(0 0 8px white);
+    filter: drop-shadow(0 0 3px white);
     animation: star-rotate 12s linear infinite, star-twinkle 5s ease-in-out infinite 1.5s;
   }
   
@@ -275,8 +275,8 @@
   }
   
   @keyframes star-twinkle {
-    0%, 100% { opacity: 0.7; filter: drop-shadow(0 0 5px currentColor); }
-    50% { opacity: 1; filter: drop-shadow(0 0 15px currentColor); }
+    0%, 100% { opacity: 0.7; filter: drop-shadow(0 0 2px currentColor); }
+    50% { opacity: 1; filter: drop-shadow(0 0 5px currentColor); }
   }
   
   @keyframes star-color-gold {
